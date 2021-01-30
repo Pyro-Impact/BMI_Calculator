@@ -3,7 +3,7 @@ print("Welcome to the BMI Calculator. \n ")
 name_1 = str(input("What is your name?"))
 
 conv1 = input("Pounds/Inches or Kilograms/Meters?"
-              "Type 1 for the first option, and 2 for the second option.")
+              "Type 1 for the first option, and anything else for the second option.")
 
 if conv1 == "1":
     weight1 = float(input("What is your weight in pounds?"))
