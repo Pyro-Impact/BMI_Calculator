@@ -1,28 +1,44 @@
 print("Welcome to the BMI Calculator. \n ")
 
-name_1 = str(input("What is your name?"))
-
-conv1 = input("Pounds/Inches or Kilograms/Meters?"
-              "Type 1 for the first option, and anything else for the second option.")
-
-if conv1 == "1":
-    weight1 = float(input("What is your weight in pounds?"))
-    height1 = float(input("What is your height in inches?"))
-    weight2 = 2
-    height2 = 2
-else:
-    weight2 = input("What is your weight in kilograms?")
-    height2 = input("What is your height in meters?")
-    weight2 = float(weight2) * 2.205
-    height2 = float(height2) * 39.37
-    weight1 = 2
-    height1 = 2
+name_1 = str(input("What is your name? "))
+conv1 = str(input("Pounds/Inches or Kilograms/Meters?"
+                  "\nType 1 for the first option, and anything else for the second option: "))
 
 
-def bmi_calculator(name, weight, height):
+def height_conversion():
+    while True:
+        try:
+            if conv1 == "1":
+                height = float(input("What is your height in inches? "))
+                break
+            else:
+                height = float(input("What is your height in meters? "))
+                height *= 39.37
+                break
+        except ValueError:
+            print("Please try again.")
+    return height
+
+
+def weight_conversion():
+    while True:
+        try:
+            if conv1 == "1":
+                weight = float(input("What is your weight in pounds? "))
+                break
+            else:
+                weight = input("What is your weight in kilograms? ")
+                weight = float(weight) * 2.205
+                break
+        except ValueError:
+            print("Please try again.")
+    return weight
+
+
+def bmi_calculator(name, height, weight):
     bmi = float(703 * weight / (height ** 2))
     print("Your BMI is: ")
-    print(str(round(bmi, 3)))
+    print(str(round(bmi, 1)))
     if bmi < 18.5:
         return name + " is underweight."
     elif 18.5 <= bmi <= 24.9:
@@ -35,7 +51,4 @@ def bmi_calculator(name, weight, height):
         return name + " is a class 3 obese."
 
 
-if conv1 == "1":
-    print(bmi_calculator(name_1, weight1, height1))
-else:
-    print(bmi_calculator(name_1, weight2, height2))
+print(bmi_calculator(name_1, height_conversion(), weight_conversion()))
