@@ -6,6 +6,8 @@ The original code came from this tutorial. I've modified it by the following:
 2. Added unit conversion for both metric and imperial
 3. Added new weight classifications
 4. Added a long if/else statement in the function
+5. Added classes and functions
+6. Added modules
 
 Welcome to the BMI Calculator.
 
