@@ -1,4 +1,6 @@
-# BMI_Calculator
+# BMI_Calculator- BMICalculator.py is the main file
+
+I do realize that the class is unecessary but I put it there to practice OOP.
 
 https://www.youtube.com/watch?v=NSbOtYzIQI0 
 The original code came from this tutorial. I've modified it by the following:
