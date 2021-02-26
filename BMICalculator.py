@@ -1,10 +1,42 @@
-from BMICalc.H_and_W import HeightandWeight
+from Shift15.Restart_Function import confirm_restart
 
 print("Welcome to the BMI Calculator. \n ")
-
 name_1 = str(input("What is your name? "))
 conv1 = str(input("Pounds/Inches or Kilograms/Meters?"
                   "\nType 1 for the first option, and anything else for the second option: "))
+
+
+class HeightandWeight:
+    def __init__(self, conversion):
+        self.conv1 = conversion
+
+    def height_conversion(self):
+        while True:
+            try:
+                if self.conv1 == "1":
+                    height = float(input("What is your height in inches? "))
+                    break
+                else:
+                    height = float(input("What is your height in meters? "))
+                    height *= 39.37
+                    break
+            except ValueError:
+                print("Please try again.")
+        return height
+
+    def weight_conversion(self):
+        while True:
+            try:
+                if self.conv1 == "1":
+                    weight = float(input("What is your weight in pounds? "))
+                    break
+                else:
+                    weight = input("What is your weight in kilograms? ")
+                    weight = float(weight) * 2.205
+                    break
+            except ValueError:
+                print("Please try again.")
+        return weight
 
 
 class FinalConversion:
@@ -29,6 +61,12 @@ class FinalConversion:
             return self.name + " is a class 3 obese."
 
 
-HaW = HeightandWeight(conv1)
-FC = FinalConversion(name_1, HaW.weight_conversion(), HaW.height_conversion())
-print(FC.bmi_calculator())
+while True:
+    HaW = HeightandWeight(conv1)
+    FC = FinalConversion(name_1, HaW.weight_conversion(), HaW.height_conversion())
+    print(FC.bmi_calculator())
+
+    if confirm_restart() == "yes":
+        continue
+    else:
+        break
