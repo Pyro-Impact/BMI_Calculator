@@ -2,6 +2,8 @@
 
 I do realize that the class is unecessary but I put it there to practice OOP.
 
+Make sure to create an __init__.py file for the Restart_Function module.
+
 https://www.youtube.com/watch?v=NSbOtYzIQI0 
 The original code came from this tutorial. I've modified it by the following:
 1. Making an Input (the original didn't have an input)
@@ -9,7 +11,7 @@ The original code came from this tutorial. I've modified it by the following:
 3. Added new weight classifications
 4. Added a long if/else statement in the function
 5. Added classes and functions
-6. Added modules
+6. Added module.
 
 Welcome to the BMI Calculator.
 
